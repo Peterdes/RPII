@@ -1,0 +1,100 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 30 października 2013 \hfill}
+
+\begin{document}
+	\begin{theorem}[L\'{e}vy-Cramer simplified]
+		$X_n \implies X$ iff $\varphi_{X_n} \to \varphi_X$ pointwise.
+	\end{theorem}
+	
+	\begin{corollary}
+		$X_n, X$ are random vectors in $\R^d$, then $X_n \implies X$ iff $\forall_{t \in \R^d} \langle t, X_n\rangle \implies \langle t,X\rangle$.
+	\end{corollary}
+	
+	\begin{remark}
+		We know $X \sim \N(a, \sigma^2)$, for which $\varphi_{\N(a,\sigma^2)}(t) = e^{ita - \frac{\sigma^2}{2} t^2}$ and $X \sim a + \sigma Y$ for $Y \sim \N(0,1)$.
+	\end{remark}
+	
+	\begin{definition}[canonical Gaussian distribution]
+		The canonical $d$-dimensional Gaussian distribution on $\R^d$ is the probability measure $\gamma_d$ with the density $\displaystyle \frac{d \gamma_d(x)}{dx} = \frac{1}{(2 \pi)^{\frac{d}{2}}} e^{-\frac{|x|^2}{2}}.$
+		
+		Equivalently, we say that a~$d$-dimensional random vector $X$ has the canonical Gaussian distribution if $X \sim \gamma_d$, i.e. $X_1, \ldots, X_d$ are independent with $\N(0,1)$-distribution. We write $X \sim \gamma_d$ or $X \sim \N(0,I_d)$.
+	\end{definition}
+	
+	\begin{definition}[pushforward]
+		$\mu$ -- a~measure on $\R^m$, $F:\R^m \to \R^d$ measurable, $F_\# \mu$ -- \emph{a~pushforward of $\mu$} is the measure on $\R^d$ given by $F_\# \mu(A) = \mu(F^{-1}(A))$.
+	\end{definition}
+	
+	\begin{definition}[Gaussian vector]
+		A~probability measure $\mu$ on $\R^d$ is called \emph{Gaussian} or \emph{normal} iff there exists affine $U:\R^m \to \R^d$ such that $\mu = U_\# \gamma_m$.
+		
+		A~$d$-dimensional random vector $X$ is called Gaussian if its law is Gaussian, i.e. $X \sim U Y$, $Y \sim \gamma_m$.
+	\end{definition}
+	
+	\begin{remark}
+		$X \sim UY = AY + b$, then $\E X = b, \cov(X) = A A^T$.
+	\end{remark}
+	
+	\begin{remark}
+		$X \sim AY + b$, then $\displaystyle \varphi_X(t) = e^{i \langle \E X, t \rangle - \frac{\langle \cov(x)t, t \rangle}{2}}$
+	\end{remark}
+	
+	\begin{definition}[Gaussian again]
+		We say that a~random $d$-dimensional vector $X$ (respectively, a~probability measure $\mu$ on $\R^d$) is \emph{Gaussian} iff $\displaystyle \varphi_X(t) = e^{i \langle b,t \rangle - \frac{ \langle Ct, t\rangle }{2}}$, where $b \in \R^d$, $C \in M_{d \times d}, C = C^T, C \geq 0$.
+	\end{definition}
+	
+	\begin{proposition}
+		These definitions are equivalent.
+	\end{proposition}
+	
+	\begin{corollary}
+		Every $d$-dimensional Gaussian vector is an affine image of $d$-dimensional canonical Gaussian vector.
+	\end{corollary}
+	
+	\begin{remark}
+		Equivalently, $\langle t, X\rangle$ is Gaussian for any $t \in \R^d$.
+	\end{remark}
+	
+	\begin{corollary}
+		$X_1 \sim \N(b_1, C_1), X_2 \sim \N(b_2, C_2)$ independent Gaussian, then $X_1+X_2 \sim \N(b_1 + b_2, C_1 + C_2)$ also Gaussian.
+	\end{corollary}
+	
+	\begin{corollary}
+		Affine image of a~Gaussian vector is a~Gaussian vector.
+	\end{corollary}
+	
+	\begin{remark}
+		$X \sim \N(b, C)$ has the density iff $\det(C) \neq 0$ and then $\displaystyle g(x) = \frac{1}{(2 \pi)^{\frac{d}{2}} \sqrt{\det C}} e^{-\frac{\langle C^{-1} (x-b), (x-b)\rangle}{2}}.$
+	\end{remark}
+	
+	\begin{theorem}
+		If $X$ is a~Gaussian vector in $\R^d$, then coordinates of $X$ are independent iff they are uncorrelated (i.e. $X_1, \ldots, X_d$ independent iff $\cov(X_j, X_k) = 0 $ for $j\neq k$).
+	\end{theorem}
+	
+	\begin{remark}
+		In the theorem it is important thet the whole vector is Gaussian, not only its coordinates!
+	\end{remark}
+	
+	\begin{theorem}[CTL in the iid case]
+		$X_1, X_2, \ldots$ iid random variables, $\E X_1 = a$, $\var(X_1) = \sigma^2 \in (0,\infty)$, then $\frac{X_1 + \ldots + X_n - na}{\sqrt{n}\sigma} \implies \N(0,1)$.
+	\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 

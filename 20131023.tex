@@ -1,0 +1,43 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 23 października 2013 \hfill}
+
+\begin{document}
+	\begin{theorem}
+		$\displaystyle \varphi_{\N(0,1)}(t) = e^{-\frac{t^2}{2}} \qquad \varphi_{\N(a,\sigma^2)}(t) = e^{ita - \frac{t^2 \sigma^2}{2}}$
+	\end{theorem}
+	
+	\begin{theorem}
+		$X$ random variable in $\R^d$, $\E |X_1|^{k_1} \ldots |X_d|^{k_d} < \infty$, then $\displaystyle \frac{\partial^{k_1}}{\partial t_1^{k_1}} \ldots \frac{\partial^{k_d}}{\partial t_d^{k_d}} \varphi_X(t)$ exists and equals $\displaystyle i^{|k|} \E X_1^{k_1} \ldots X_d^{k_d}$.
+	\end{theorem}
+	
+	\begin{remark}
+		$X_1, \ldots, X_d$ independent, then $\varphi_{X_1 + \ldots + X_d}(t) = \varphi_{X_1}(t) \ldots \varphi_{X_d}(t)$, but opposite is not true in general.
+	\end{remark}
+	
+	\begin{theorem}
+		$X_1, \ldots, X_d$ independent iff $\forall_{t \in \R^d} \varphi_{(X_1, \ldots, X_d)}(t) = \varphi_{X_1}(t_1) \ldots \varphi_{X_d}(t_d)$.
+	\end{theorem}
+	
+	\begin{theorem}[L\'{e}vy-Cramer]
+		1. If $\mu_n, \mu$ probability measures on $\R^d$ and $\mu_n \implies \mu$, then $\displaystyle\forall_{t \in \R^d} \varphi_{\mu_n}(t) \to \varphi_\mu(t)$.
+		
+		2. If $\mu_n$ probability measure on $\R^d$ and there exists function $\varphi:\R^d \to \mb{C}$ such that $\forall_{t \in \R^d} \varphi_{\mu_n}(t) \to \varphi(t)$ and $\varphi$ is continuous at 0, then there exists a~probability measure $\mu$ on $\R^d$ such that $\varphi=\varphi_\mu$ and $\mu_n \implies \mu$.
+	\end{theorem}
+	
+	\begin{corollary}
+		$\mu_n \implies \mu$ iff $\varphi_{\mu_n} \to \varphi_\mu$ pointwise.
+	\end{corollary}
+	
+	\begin{theorem}[Inverse Fourier Theorem]
+		Suppose that $\mu$ is a~probability measure on $\R^d$ and $\varphi_\mu \in L^1(\R^d)$ such that $\int_{\R^d} |\varphi_\mu(x)|\,dx < \infty$, then $\mu$ has the density $g$ given by the formula $$g(x) = \frac{1}{(2 \pi)^d} \int_{\R^d} \varphi_\mu(t) e^{-i\langle t,x\rangle} dt.$$
+	\end{theorem}
+
+
+
+
+
+
+\end{document}
+ 
+ 

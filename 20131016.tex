@@ -1,0 +1,57 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 16 października 2013 \hfill}
+
+\begin{document}
+	\begin{definition}[characteristic function]
+		$\displaystyle\varphi_\mu(t) = \int_{\R^d} e^{i\langle t,x\rangle}d\mu(x)$
+		
+		$\displaystyle\varphi_X(t) = \varphi_{\mu_X}(t) = \E e^{i\langle t,x\rangle}$
+	\end{definition}
+	
+	\begin{proposition}
+		$\varphi_X(0) = 1$ and $|\varphi_X(t)| \leq 1, t \in \R^d$
+	\end{proposition}
+	
+	\begin{proposition}
+		$\varphi_X$ uniformly continuous on $\R^d$.
+	\end{proposition}
+	
+	\begin{proposition}
+		$\varphi_X$ is a~nonnegatively determined function on $\R^d$.
+	\end{proposition}
+	
+	\begin{theorem}[Bochner]
+		A~function $\varphi:\R^d \to \mb{C}$ is a~characteristic function of a~random $d$-dimensional vector iff $\varphi(0)=1$, $\varphi$ is continuous and $\varphi$ is nonnegatively determined, i.e. $(\varphi(t_i - t_j))_{i,j}$ is nonnegatively determined for any $t_i$'s.
+	\end{theorem}
+	
+	\begin{proposition}
+		$\varphi_{AX+b}(t) = e^{i \langle b,t\rangle} \varphi_X(A^T t)$, in particular $\varphi_{-X}(t) = \varphi_X(-t) = \overline{\varphi_X(t)}$.
+	\end{proposition}
+	
+	\begin{proposition}
+		$X$ real random variable, if $\E |X|^k < \infty$, $k \in \mb{Z}_+$, then $\varphi_X \in C^k(\R)$ and $\varphi_X^{(k)}(t) = i^k \E X^k e^{itX}$.
+	\end{proposition}
+	
+	\begin{remark}
+		Existence of $\varphi_X'$ does not imply $\E |X| < \infty$.
+	\end{remark}
+	
+	\begin{proposition}
+		If $\mu, \nu$ probability measures on $\R^d$ such that $\varphi_\mu = \varphi_\nu$, then $\mu = \nu$.
+	\end{proposition}
+	
+	\begin{proposition}
+		$X_1, \ldots, X_n$ independent random $d$-dimensional variables, then $\varphi_{X_1 + \ldots + X_n} (t) = \varphi_{X_1}(t) \ldots \varphi_{X_n}(t)$.
+	\end{proposition}
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 

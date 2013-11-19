@@ -1,0 +1,111 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 9 października 2013 \hfill}
+
+\begin{document}
+	\begin{definition}
+		$\mu_n, \mu$ probability measures on $(E, \B(E))$, where $(E, \rho)$ is a~metric space. We say that $\mu_n \implies \mu$, that is $\mu_n$ \emph{converges in law/in distribution/weakly} to $\mu$, iff $\displaystyle\forall_{f \in C_b(E)} \int_E f\,d\mu_n \to \int_E f\,d\mu$.
+	\end{definition}
+	
+	\begin{theorem}
+		The following are equivalent:
+		\begin{enumerate}
+			\item $\mu_n \implies \mu$,
+			\item $\forall_f$ if $f$ is uniformly continuous and bounded on $E$, then $\displaystyle\int_E f\,d\mu_n \to \int f\,d\mu$,
+			\item $\displaystyle\forall_{G \subset E\text{ open}} \liminf_{n \to \infty} \mu_n(G) \geq \mu(G)$,
+			\item $\displaystyle\forall_{F \subset E\text{ closed}} \limsup_{n \to \infty} \mu_n(F) \leq \mu(F)$,
+			\item $\displaystyle\forall_{A \in \B(E)}\ \mu(\partial A) = 0 \implies \lim_{n \to \infty} \mu_n(A) = \mu(A)$.
+		\end{enumerate}
+	\end{theorem}
+	
+	\begin{definition}
+		$\mu$ probability measure on $\R^d$, then its distribution function is $F_\mu(t) = \mu( (-\infty, t_1] \times \ldots \times (-\infty, t_n] )$.
+	\end{definition}
+	
+	\begin{theorem}
+		$\mu_n \implies \mu$ iff $\forall_t$ if $F_\mu$ is continuous at $t$, then $\displaystyle\lim_{n \to \infty} F_{\mu_n}(t) = F_\mu(t)$.
+	\end{theorem}
+	
+	\begin{lemma}
+		$\mu_n, \mu$ probability measures on $(E, \B(E))$, $\mc{A}$ a~$\pi$-system of Borel sets (i.e. $\forall_{A, B \in \mc{A}} A \cap B \in \mc{A}$) such that any open set in $E$ is a~union of at most countably many sets in $\mc{A}$, and $\forall_{A \in \mc{A}} \mu_n(A) \to \mu(A)$, then $\mu_n \implies \mu$.
+	\end{lemma}
+	
+	\begin{proposition}
+		$\mu_n, \mu$ probability measures on $\R^d$, then $\mu_n \implies \mu$ iff $ \displaystyle \forall_{f \in C_c(\R^d)} \int_E f\,d\mu_n \to \int_E f\,d\mu$.
+	\end{proposition}
+	
+	\begin{definition}
+		$X_n, X$ random variables with values in metric space $(E, \rho)$, then $X_n$ converges to $X$ \emph{in law (or in distribution, or weakly)} iff $\mu_{X_n} \implies \mu_X$. We write $X_n \xrightarrow{\mc{L}} X$ or $X_n \xrightarrow{d} X$ or $X_n \implies X$.
+	\end{definition}
+	
+	\begin{remark}
+		$\displaystyle \int_E f(t)\,f\mu_X(t) = \E f(X)$, so $X_n \implies X$ iff $\displaystyle \forall_{f \in C_b(E)} \E f(X_n) \to \E f(X)$.
+	\end{remark}
+	
+	\begin{remark}
+		$X_n$ and $X$ may be defined on distinct spaces.
+	\end{remark}
+	
+	\begin{remark}
+		$X_n$ may have the same law and be very different.
+	\end{remark}
+	
+	\begin{remark}
+		Convergence in probability implies convergence in law, but not conversely.
+	\end{remark}
+	
+	\begin{proposition}
+		$X_n, Y_n, X$ random variables with values in $(E, \rho)$, $X_n \implies X$, $\rho(X_n, Y_n) \xrightarrow{\P} 0$.
+		
+		Then $Y_n \implies X$.
+	\end{proposition}
+	
+	\begin{corollary}
+		$Y_n \xrightarrow{\P} X$ implies $Y_n \implies X$.
+	\end{corollary}
+	
+	\begin{definition}
+		$\{\mu_i\}_{i \in I}$ a~family of probability measures on $(E, \rho)$, we say that this family is \emph{tight} iff $\displaystyle \forall_{\varepsilon>0} \exists_{K\text{ compact in }E} \forall_{i \in I} \mu_i(K) \geq 1 - \varepsilon$.
+	\end{definition}
+	
+	\begin{definition}
+		$\{X_i\}$ tight iff $\{\mu_{X_i}\}$ tight.
+	\end{definition}
+	
+	\begin{example}
+		$E=\R, \mu_n = \delta_n$ not tight.
+	\end{example}
+	
+	\begin{remark}
+		$E=\R, \{\mu_i\}$ tight iff $\forall_{\varepsilon > 0} \exists_M \forall_{i \in I} \mu_i([-M,M]) \geq 1-\varepsilon$.
+	\end{remark}
+	
+	\begin{remark}
+		$X_i$ random variables in $\R$, $p>0$, $\sup_i \E |X_i|^p < \infty \implies \{X_i\}_{i \in I}$ is tight.
+	\end{remark}
+	
+	\begin{theorem}[Prokhorov]
+		$\{\mu_i\}_{i \in I}$ probability measures on $\R^d$. This family is tight iff for any sequence of measures $\mu_k$ in the family one may choose a weakly convergent subsequence $\mu_{k_l}$.
+	\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 

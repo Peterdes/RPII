@@ -1,0 +1,48 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 6 listopada 2013 \hfill}
+
+\begin{document}
+	\begin{theorem}[CTL in the iid case]
+		$X_1, X_2, \ldots$ iid random variables, $\E X_1 = a$, $\var(X_1) = \sigma^2 \in (0,\infty)$, then $\frac{X_1 + \ldots + X_n - na}{\sqrt{n}\sigma} \implies \N(0,1)$.
+	\end{theorem}
+	
+	\begin{corollary}[de Moivre-Laplace]
+		$X_n \sim \mr{Bin}(n,p)$, then $\frac{X_n - np}{\sqrt{np(1-p)}} \implies \N(0,1)$.
+	\end{corollary}
+	
+	\begin{definition}[triangular array]
+		$(X_{n,k})_{n=1,2,\ldots; 1 \leq k \leq k_n}$ is a~\emph{triangular array of random variables} if $\forall_n X_{n,1}, \ldots, X_{n,k_n}$ are independent.
+	\end{definition}
+	
+	\begin{theorem}[CLT -- Lindeberg's version]
+		$(X_{n,k})$ a~triangular array, $S_n = X_{n,1} + \ldots + X_{n,k_n}$,
+		\begin{enumerate}
+			\item $\E S_n \to m$
+			\item $\var(S_n) \to \sigma^2$
+			\item \emph{Lindeberg's condition:} $\displaystyle \forall_{\varepsilon>0} \sum_{k=1}^{k_n} \E \left( |X_{n,k} - \E X_{n,k}|^2 \1_{\{|X_{n,k} - \E X_{n,k} | > \varepsilon \}} \right) \to 0$
+		\end{enumerate}
+		Then $S_n \implies \N(m,\sigma^2)$.
+
+	\end{theorem}
+	
+	\begin{lemma}
+		Lindeberg's condition implies
+		\begin{itemize}
+			\item $\displaystyle \forall_{t>0} \lim_{n \to \infty} \P(\max_{1 \leq k \leq k_n} |X_{n,k}| \geq t) = 0$,
+			\item $\displaystyle \lim_{n\to \infty} \max_{1 \leq k \leq k_n} \var(X_{n,k}) \to 0$.
+		\end{itemize}
+
+	\end{lemma}
+	
+	\begin{theorem}[Feller]
+		Suppose that $(X_{n,k})$ is a~triangular array, $\displaystyle \sum_{k=1}^{k_n} \E X_{n,k} \to m$, $\displaystyle \sum_{k=1}^{k_n} \var(X_{n,k}) \to \sigma^2$, and $\displaystyle S_n= \sum_{k=1}^{k_n} X_{n,k} \implies \N(m,\sigma^2)$, then if $\displaystyle \max_{1 \leq k \leq k_n} \var(X_{n,k}) \to 0$, then Lideberg's condition is satisfied.
+	\end{theorem}
+
+
+
+
+
+\end{document}
+ 
+ 
