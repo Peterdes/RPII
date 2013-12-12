@@ -1,0 +1,100 @@
+\input{include.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 20 listopada 2013 \hfill}
+
+\begin{document}
+	\begin{example}
+		$(X, Y)$ has density $g_{(X,Y)}(x,y)$.
+		Then $$\E(X|Y) = \varphi(y) = \frac{\int x g(x,y)\,dx}{\int g(x,y)\,dy}.$$
+	\end{example}
+	
+	\begin{proposition}
+		Conditional Expected Value is linear.
+	\end{proposition}
+	
+	\begin{proposition}
+		$\E(\E(X | \G)) = \E X$
+	\end{proposition}
+	
+	\begin{proposition}
+		$X_1 \geq X_2 \implies \E(X_1 | \G) \geq \E(X_2 | \G)$ almost surely.
+	\end{proposition}
+	
+	\begin{proposition}
+		$|\E(X | \G) | \leq \E(|X|\: | \G)$ a.s.,
+		in particular CEV is a~contraction in $L^1$
+		because $\E| \E(X | \G) | \leq \E |X|$.
+	\end{proposition}
+
+	
+	\begin{proposition}
+		$X$ is $\G$-measurable, then $\E(X|\G) = X$ a.s.
+	\end{proposition}
+	
+	\begin{proposition}
+		$X \perp Y \implies \E(X | \G) = \E X$ a.s.
+		
+		In particular $\E(X | \{ \varnothing, \Omega\}) = \E X$.
+	\end{proposition}
+	
+	\begin{proposition}[Lebesgue monotone convergence thm]
+		$0 \leq X_n \nearrow X$, $X_n, X$ integrable,
+		then $\E(X_n | \G) \nearrow \E(X|\G)$ a.s.
+	\end{proposition}
+	
+	\begin{proposition}[Lebesgue dominated convergence thm]
+		$|X_n| \leq Y$, $\E Y < \infty$, $X_n \to X$ a.s.,
+		then $\displaystyle \lim_{n \to \infty} \E(X_n | \G) = \E(X | \G)$ a.s.
+	\end{proposition}
+	
+	\begin{proposition}[Fatou lemma]
+		$X_n$ integrable, then $\displaystyle \liminf_{n \to \infty}
+		\E\left(X_n | \G\right)
+		\geq \E\left(\liminf_{n \to \infty} X_n | \G\right).$
+	\end{proposition}
+	
+	\begin{proposition}
+		$X$ is $\G$-measurable, $\E|Y| < \infty, \E|XY| < \infty$,
+		then $\E(XY | \G) = X \E(Y | \G)$ a.s.
+	\end{proposition}
+	
+	\begin{proposition}
+		$X$ integrable, $\G_1 \subset \G_2$,
+		then $\E(X | \G_1) = \E( \E(X | \G_2) | \G_1)
+					= \E( \E(X | \G_1) | \G_2)$.
+	\end{proposition}
+	
+	\begin{proposition}[Jensen inequality]
+		$\varphi:\R \to \R$ convex, $\E |X| < \infty$,
+			$\E |\varphi(X)| < \infty$,
+		then $\E(\varphi(X) | \G) \geq \varphi(\E(X | \G))$.
+		
+		In particular $\E \varphi(X) \geq \varphi(\E X)$.
+	\end{proposition}
+	
+	\begin{corollary}
+		$\E |X|^p < \infty$, $p \geq 1$,
+		then $|\E ( X | \G )|^p \leq \E\left( |X|^p | \G\right)$.
+		
+		In particular $\E(\bullet | \G)$ is a~contraction in $L^p$.
+	\end{corollary}
+	\vspace{0.5cm}
+	
+	{\bf Filtrations and stopping times}
+	
+		$T \subset \mb{Z}$
+	\begin{definition}[filtration]
+		A~\emph{filtration} is a~sequence of $\sigma$-bodies $(\F_t)_{t \in T}$ such that $\F_t \subset \F$ and $\F_t \subset \F_s$ for $t < s$.
+	\end{definition}
+	
+	\begin{definition}[stopping time]
+		A~\emph{stopping time} with respect to filtration $(\F_t)_{t \in T}$ is a~random variable $\tau: \Omega \to T \cup \{\infty\}$ such that $\displaystyle \forall_{t\in T} \{ \tau \leq t\} \in \F_t$.
+	\end{definition}
+	
+	\begin{proposition}
+		$\tau: \Omega \to T \cup \{\infty\}$ is a~stopping time iff $\forall_{t \in T} \{\tau = t\} \in \F_t$.
+	\end{proposition}
+
+\end{document}
+ 
+ 
