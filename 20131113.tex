@@ -5,9 +5,12 @@
 \begin{document}
 	\begin{theorem}[CLT Lindeberg-Levy]
 		Let $(X_{n,k})$ be a triangular array,
-		$\sum_{k=1}^{k_n} X_{n,k} \to m$, $\sum_{k=1}^{k_n} \var(X_{n,k}) \to \sigma^2$,
+		$\sum_{k=1}^{k_n} X_{n,k} \to m$,
+		$\sum_{k=1}^{k_n} \var(X_{n,k}) \to \sigma^2$,
 		and Lindeberg's condition be satisfied:
-		$$ \forall_{\varepsilon>0} \sum_{k=1}^{k_n} \E |X_{n,k} - \E X_{n,k} |^2 \1_{\{ |X_{n,k} - \E X_{n,k} | > \varepsilon \}} \to 0.$$
+		$$ \forall_{\varepsilon>0} \sum_{k=1}^{k_n}
+			\E |X_{n,k} - \E X_{n,k} |^2 
+			\1_{\{ |X_{n,k} - \E X_{n,k} | > \varepsilon \}} \to 0.$$
 		Then $$S_n = \sum_{k=1}^{k_n} X_{n,k} \implies \N(m, \sigma^2).$$
 	\end{theorem}
 	
@@ -21,18 +24,21 @@
 		Lyapunov's condition
 		$$ \exists_{\delta>0} \sum_{k=1}^{k_n}
 			\E |X_{n,k} - \E X_{n,k} |^{2 + \delta} \to 0 $$
-		implies Lindeberg's condition (under CLT's assumptions about $\E$ and $\var$ of sums).
+		implies Lindeberg's condition (under CLT's assumptions
+		about $\E$ and $\var$ of sums).
 	\end{proposition}
 	
 	\begin{corollary}
 		For $\sum \E X_{n,k} \to 0, \sum \var(X_{n,k}) \to 1$,
 		it follows that $$ \sup_t \left| \P\left(\sum X_{n,k} \leq t\right)
 			- \phi(t)\right| \to 0,$$
-		and in particular $\P(\sum X_{n,k} \leq t) \to \phi(t) = \P(\N(0,1) \leq t)$.
+		and in particular $\P(\sum X_{n,k} \leq t) \to \phi(t)
+		= \P(\N(0,1) \leq t)$.
 	\end{corollary}
 	
 	\begin{theorem}[Berny-Esseen]
-		$X_1, X_2, \ldots, X_n$ independent, $\E X_i = 0, \sum_{k=1}^n \var(X_k) = 1$, then
+		$X_1, X_2, \ldots, X_n$ independent,
+		$\E X_i = 0, \sum_{k=1}^n \var(X_k) = 1$, then
 		$$\left| \P\left(\sum_{k=1}^n X_k \leq t\right) - \phi(t) \right|
 		\leq C_1 \sum_{k=1}^n \E |X_k|^3.$$
 	\end{theorem}
@@ -54,8 +60,8 @@
 	
 	\begin{example}[de Moivre-Laplace]
 		$S_n \sim \mr{Bin}(n,p)$,
-		$\left|\P(S_n \leq t) -\phi\left(\frac{t - np}{\sqrt{n p (1-p)}} \right) \right|
-		\leq C_2 \frac{p^2 + (1-p)^2}{\sqrt{np(1-p)}}$.
+		$\left|\P(S_n \leq t) - \phi\left(\frac{t - np}{\sqrt{n p (1-p)}} \right) 
+		\right| \leq C_2 \frac{p^2 + (1-p)^2}{\sqrt{np(1-p)}}$.
 	\end{example}
 	
 	\begin{definition}

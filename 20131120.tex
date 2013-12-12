@@ -5,7 +5,8 @@
 \begin{document}
 	\begin{example}
 		$(X, Y)$ has density $g_{(X,Y)}(x,y)$.
-		Then $$\E(X|Y) = \varphi(y) = \frac{\int x g(x,y)\,dx}{\int g(x,y)\,dy}.$$
+		Then $$\E(X|Y) = \varphi(y) =
+			\frac{\int x g(x,y)\,dx}{\int g(x,y)\,dy}.$$
 	\end{example}
 	
 	\begin{proposition}
@@ -44,7 +45,8 @@
 	
 	\begin{proposition}[Lebesgue dominated convergence thm]
 		$|X_n| \leq Y$, $\E Y < \infty$, $X_n \to X$ a.s.,
-		then $\displaystyle \lim_{n \to \infty} \E(X_n | \G) = \E(X | \G)$ a.s.
+		then $\displaystyle \lim_{n \to \infty} 
+				\E(X_n | \G) = \E(X | \G)$ a.s.
 	\end{proposition}
 	
 	\begin{proposition}[Fatou lemma]
@@ -84,15 +86,20 @@
 	
 		$T \subset \mb{Z}$
 	\begin{definition}[filtration]
-		A~\emph{filtration} is a~sequence of $\sigma$-bodies $(\F_t)_{t \in T}$ such that $\F_t \subset \F$ and $\F_t \subset \F_s$ for $t < s$.
+		A~\emph{filtration} is a~sequence of $\sigma$-bodies 
+		$(\F_t)_{t \in T}$ such that $\F_t \subset \F$ and
+		$\F_t \subset \F_s$ for $t < s$.
 	\end{definition}
 	
 	\begin{definition}[stopping time]
-		A~\emph{stopping time} with respect to filtration $(\F_t)_{t \in T}$ is a~random variable $\tau: \Omega \to T \cup \{\infty\}$ such that $\displaystyle \forall_{t\in T} \{ \tau \leq t\} \in \F_t$.
+		A~\emph{stopping time} with respect to filtration $(\F_t)_{t \in T}$ 
+		is a~random variable $\tau: \Omega \to T \cup \{\infty\}$ such that
+		$\displaystyle \forall_{t\in T} \{ \tau \leq t\} \in \F_t$.
 	\end{definition}
 	
 	\begin{proposition}
-		$\tau: \Omega \to T \cup \{\infty\}$ is a~stopping time iff $\forall_{t \in T} \{\tau = t\} \in \F_t$.
+		$\tau: \Omega \to T \cup \{\infty\}$ is a~stopping time
+		iff $\forall_{t \in T} \{\tau = t\} \in \F_t$.
 	\end{proposition}
 
 \end{document}
