@@ -1,0 +1,137 @@
+\input{includepl.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 11 grudnia 2013 \hfill}
+
+\begin{document}
+	\begin{theorem}
+		$X_n$ nadmartyngał, $\sup_n \E X_n^- < \infty$, 
+		wtedy $X_n \to X$ p.n. oraz $\E |X| < \infty$.
+	\end{theorem}
+	
+	\begin{corollary}
+		$X_n$ podmartyngał, $\sup \E X_n^+ < \infty$, to $X_n \to X$ p.n. 
+		i~$\E |X| < \infty$.
+	\end{corollary}
+	
+	\begin{corollary}
+		Każdy nieujemny nadmartyngał i~niedodatni podmartyngał 
+		jest zbieżny p.n.
+	\end{corollary}
+	
+	{\bf Nierówności maksymalne Dooba}
+	\begin{theorem}
+		$(M_k)$ martyngał, to:
+		\begin{itemize}
+			\item $\displaystyle
+			\P\left(\max_{1 \leq k \leq n} |M_k| \geq t\right)
+			\leq
+			\frac1t \E |M_n| 
+				\1_{\left\{\max_{1 \leq k \leq n} |M_k| \geq t\right\}}
+			\leq 
+			\frac1t \E |M_n|$,
+			
+			\item $p>1, \quad \displaystyle
+			\E \max_{1 \leq k \leq n} |M_k|^p 
+			\leq 
+			\left(\frac{p}{p+1}\right)^n \E |M_n|^p$.
+		\end{itemize}
+
+	\end{theorem}
+	
+	\begin{corollary}
+		$(M_k)_{k \geq 1}$ martyngał, wtedy
+		\begin{itemize}
+			\item $t>0, \quad \displaystyle
+			\P\left(\sup_{k \geq 1} |M_k| \geq t\right) 
+			\leq
+			\frac{1}{t} \sup_{k \geq 1} \E |M_k|$,
+		\end{itemize}
+
+	\end{corollary}
+	
+	\begin{corollary}
+		$(M_k)$ podmartyngał lub nadmartyngał (o~co chodzi?).
+	\end{corollary}
+	
+	{\bf Jednostajna całkowalność zmiennych losowych}
+	\begin{definition}
+		$(X_i)_{i \in I}$ rodzina zmiennych losowych jest 
+		{\emph jednostajnie całkowalna}, jeśli \\
+		${\lim_{C \to \infty} \sup_i \E |X_i|
+			\1_{\{|X_i| \geq C \}} = 0}$.
+	\end{definition}
+	
+	\begin{fact}
+		$(X_i)$ jest jednostajnie całkowalna wtw, gdy 
+		spełnione są dwa warunki:
+		\begin{itemize}
+			\item $\sup_i \E |X_i| < \infty$,
+			\item $\forall_{\varepsilon > 0}
+			\exists_{\delta > 0}
+			\forall_{i \in I}
+			\P(A) \leq \delta \implies \E |X_i| \1_A \leq \varepsilon$.
+		\end{itemize}
+
+	\end{fact}
+	
+	\begin{example}
+		$\E |X| < \infty \implies \{ X \}$ jest jednostajnie całkowalna
+		(z~tw.~Lebesgue'a o~zbieżności zmajoryzowanej).
+	\end{example}
+	
+	\begin{example}
+		$\E \sup_i |X_i| < \infty \implies \{ (X_i)_{i \in I} \}$
+		jest jednostajnie całkowalna.
+	\end{example}
+	
+	\begin{theorem}
+		$p>0$, $\{ |X_n|^p \}$ jednostajnie całkowalna,
+		$X_n \xrightarrow \P X$, to $X_n \to X$ w~$L^p$,
+		czyli $\E |X_n - X|^p \to 0$.
+	\end{theorem}
+	
+	\begin{theorem}
+		$(M_n, \F_n)$ martyngał, NWSR:
+		\begin{enumerate}
+			\item $\{ M_n \}_{n \geq 0}$ jednostajnie całkowalna,
+			\item $M_n$ zbieżny w~$L^1$
+			(czyli $\exists_M \E |M_n - M| \to 0$),
+			\item $M_n$ jest prawostronnie domknięty
+			(czyli $\exists_M$, $M$ całkowalne, 
+			$M_n = \E(M | \F_n)$),
+			\item $\exists_{M_\infty}$, 
+			$\F_\infty=\sigma\left( \bigcup_{n=1}^\infty \F_n \right)
+			$-mierzalna, 
+			$M_n = \E (M_\infty | \F_n)$ p.n..
+		\end{enumerate}
+
+	\end{theorem}
+	
+	\begin{corollary}[tw. Levy'ego]
+		$X$ całkowalna, $(\F_n)$ filtracja, 
+		$\F_\infty = \sigma\left( \bigcup_{n=1}^\infty \F_n \right)$,
+		\\ ${\E( X|\F_n) \to \E(X|\F_\infty)}$ p.n. i~w~$L^1$.
+	\end{corollary}
+	
+	\begin{corollary}[prawo 0-1 Kołmogorowa]
+		$X_1, X_2, \ldots$ niezależne, 
+		$A \in \F = \bigcap_{n=1}^\infty \sigma(X_n, X_{n+1}, \ldots)$,
+		wówczas $\P(A) \in \{0,1\}$.
+	\end{corollary}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 

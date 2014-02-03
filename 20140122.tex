@@ -1,0 +1,114 @@
+\input{includepl.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 22 stycznia 2014 \hfill}
+
+\begin{document}
+	\begin{fact}
+		$\Pi$ rozkład stacjonarny wtw, gdy $\Pi = \Pi P$,
+		tj. $\forall_x \pi_x = \sum_{y \in E} \pi_y p_{y,x}$.
+	\end{fact}
+	
+	\begin{remark}
+		Jeśli $\Pi$ stacjonarny, to $\forall_x \P_\Pi(X_n = x) = \pi_x$.
+	\end{remark}
+	
+	\begin{theorem}
+		Jeśli przestrzeń stanów jest skończona, to istnieje rozkład
+		stacjonarny.
+	\end{theorem}
+	
+	\begin{theorem}[ergodyczne dla skończonej przestrzeni stanów]
+		$(X_n)_{n>0}$ ł.M. nieokresowy, nieprzywiedlny, 
+		o~macierzy przejścia $P$ i~rozkładzie stacjonarnym $\Pi$.
+		Wówczas $$\forall_{x, y \in E} 
+		\lim_{n \to \infty} p_{x,y}(n) = \pi_y,$$
+		a~nawet $\displaystyle \exists_{C<\infty, \gamma<1}
+		|p_{x,y}(n) - \pi_y| \leq C \cdot \gamma^n$.
+	\end{theorem}
+	
+	\begin{theorem}
+		Rozkład stacjonarny w~nieprzywiedlnym ł.M. jest jednoznaczny.
+	\end{theorem}
+	
+	\begin{proposition}
+		Skończony nieprzywiedlny ł.M., $\Pi$ rozkład stacjonarny.
+		Wtedy
+		$\forall_x \pi_x > 0$ oraz $$\forall_x \pi_x = \frac1{\mu_x},
+		\quad \mu_x = \E t_x = \E \inf \{ n \geq 1: X_n = n\}.$$
+	\end{proposition}
+	
+	\begin{definition}[częstość przebywania w~zbiorze]
+		$\displaystyle \nu_A(n) = 
+			\frac1n \#\{1 \leq k \leq n : x_k \in A\}$
+	\end{definition}
+	
+	\begin{theorem}[ergodyczne znowu]
+		$(X_n)$ nieprzywiedlny nieokresowy ł.M. o~skończonej 
+		przestrzeni stanów i~dowolnym rozkładzie
+		początkowym, wtedy
+		$\forall_{A \subset E} 
+		\lim_{n \to \infty} \nu_n(A) = \sum_{x \in A} \pi_x$ p.n.,
+		gdzie $\Pi$ to rozkład stacjonarny.
+	\end{theorem}
+	
+	\begin{theorem}[ergodyczne ogólne]
+		$(X_n)$ nieprzywiedlny nieodwracalny ł.M., dla którego istnieje
+		rozkład stacjonarny $\Pi$. Wówczas
+		\begin{enumerate}[(i)]
+			\item $\Pi$ jest jedyny i~$\forall_{x, y} 
+				\lim_{n \to \infty} p_{x,y}(n) = \pi_y$,
+			\item ł.M. jest powracający, $\forall_x \pi_x >0$,
+			$\pi_x = \frac1{\mu_x}, 
+			\mu_x = \E_x \inf \{ n \geq 1: X_0 = x \}$,
+			\item $\forall_{A \subset E} \lim_{n \to \infty}
+				\nu_n(A) = \Pi(A) = \sum_{x \in A} \pi_x$ p.n.
+		\end{enumerate}
+
+	\end{theorem}
+	
+	\begin{definition}[prawdopodobieństwo dojścia z $x$ do $F$]
+		$\displaystyle p_F(x) = 
+			\P_x \left(\exists_{n \geq 0} X_n \in F\right)$
+	\end{definition}
+	
+	\begin{definition}[czas oczekiwania na dojście]
+		$m_F(x) = \E_x \inf \{ n \geq 0: X_n \in F \}$
+	\end{definition}
+	
+	\begin{fact}
+		$p_F, m_F$ spełniają układ równań (o~jednoznacznym 
+		rozwiązaniu dla $|E| < + \infty$):
+		$$
+		\begin{cases}
+			p_F (x) = 1 & \forall_{x \in F}\\
+			p_F(x) = 0 & x \nrightarrow F 
+			(\iff \forall_{y\in F,n} p_{xy}(n) = 0) \\
+			p_F(x) = \sum_{y \in F} p_{xy} p_P(y)
+				& \forall_{x \notin F}
+		\end{cases}
+		$$
+		$$
+		\begin{cases}
+			m_F (x) = 0 & \forall_{x \in F}\\
+			m_F(x) = \infty & p_F(x) < 1 \\
+			m_F(x) = 1 + \sum_{y \in F} p_{xy} m_F(y) 
+			& \forall_{x \notin F}
+		\end{cases}
+		$$
+	\end{fact}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 

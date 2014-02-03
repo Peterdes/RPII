@@ -1,0 +1,155 @@
+\input{includepl.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 18 grudnia 2013 \hfill}
+
+\begin{document}
+	\begin{theorem}[zbieżność w~$L^1$]
+		$(M_n, \F_n)$ martyngał, NWSR:
+		\begin{enumerate}[a)]
+			\item $\{ M_n \}_{n \geq 0}$ jednostajnie całkowalna,
+			\item $M_n$ zbieżny w~$L^1$
+			(czyli $\exists_M \E |M_n - M| \to 0$),
+			\item $M_n$ jest prawostronnie domknięty
+			(czyli $\exists_M$, $M$ całkowalne, 
+			$M_n = \E(M | \F_n)$),
+			\item[c')] $\exists {M_\infty}$ 
+			$\F_\infty=\sigma\left( \bigcup_{n=1}^\infty \F_n \right)
+			$-mierzalna, 
+			$M_n = \E (M_\infty | \F_n)$ p.n..
+		\end{enumerate}
+		
+		Ponadto wtedy $M_n \to M_\infty$ p.n. i~w~$L^1$.
+
+	\end{theorem}
+	
+	\begin{theorem}[zbieżność w~$L^p$]
+		$(M_n, \F_n)$ martyngał, $p>1$, $\forall_n \E |M_n|^p < \infty$,
+		NWSR:
+		\begin{enumerate}[a)]
+			\item $\sup_n \E |M_n|^p < \infty$,
+			\item ${|M_n|^p}_n$ jednostajnie całkowalne,
+			\item $M_n$ zbieżny w~$L^p$ 
+			(czyli $\exists M, \E |M|^p < \infty, \E |M_n - M|^p \to 0$),
+			\item $M_n$ jest prawostronnie domknięty
+			przez zmienną z~$L^p$
+			(czyli $\exists M, \E |M|^p < \infty, 
+			\forall_n \E(M | \F_n) = M_n$),
+			\item[d')] $\exists M \F_\infty$-mierzalna, 
+			$\E |M_\infty| < \infty,
+			\forall_n \E (M_\infty | \F_n) = M_n$.
+
+		\end{enumerate}
+		
+		Ponadto wtedy $M_n \to M_\infty$ p.n. i~w~$L^p$.
+
+	\end{theorem}
+	
+	\begin{remark}
+		Istnieje martyngał jednostajnie całkowalny $(M_n)_{n \geq 0}$ 
+		taki, że $\sup_n \E |M_n| = \infty$.
+	\end{remark}
+	\pagebreak
+	{\bf Łańcuchy Markowa}
+	
+	$E$ -- skończona lub przeliczalna przestrzeń stanów.
+	
+	\begin{definition}[łańcuch Markowa]
+		Proces $(X_n)_{n \geq 0}$ o~wartościach w~skończonej 
+		lub przeliczalnej przestrzeni $E$ nazywamy
+		\emph{łańcuchem Markowa},
+		jeśli zachodzi warunek
+		$\P(X_{n+1}=a_{n+1} | X_n = a_n, \ldots, X_0 = a_0)
+		= \P(X_{n+1} = a_{n+1} | X_n = a_n)$
+		o~ile $\P(X_n = a_n, \ldots, X_0 = a_0) > 0$.
+	\end{definition}
+	
+	\begin{example}
+		$X_0, X_1, X_2, \ldots$ niezależne, to $(X_n)$ ł.M.
+	\end{example}
+	
+	\begin{example}
+		$X_0, X_1, \ldots$ niezależne, to $(S_n = X_n + S_{n-1})$ ł.M.
+	\end{example}
+	
+	\begin{example}
+		Błądzenie po wierzchołkach.
+	\end{example}
+	
+	\begin{definition}[macierz przejścia]
+		$X_n$ jest ł.M., \emph{macierzą przejścia} w~$n$-tym kroku
+		$(P_n(a,b))_{a,b \in E}$ nazywamy macierz elementów
+		$P_n(a,b) = \P(X_n = b, X_{n-1} = a)$ 
+		o~ile $\P(X_{n-1} = a) > 0$.
+	\end{definition}
+	
+	\begin{remark}
+		$P_n$ macierz przejścia w~$n$-tym kroku, $\P(X_{n-1}=a)>0$,
+		wtedy
+		\begin{itemize}
+			\item $\forall_b P_n(a,b) \geq 0$,
+			\item $\sum_b P_n(a,b) = 1$.
+		\end{itemize}
+
+	\end{remark}
+	
+	\begin{definition}[macierz stochastyczna]
+		Macierz $P = (p(a,b))_{a,b \in E}$ nazywamy {\em stochastyczną},
+		jeśli $\forall_{a,b} p(a,b) \geq 0 $ 
+		oraz $\forall_a \sum_b p(a,b) = 1$.
+	\end{definition}
+	
+	\begin{definition}[jednorodny ł. M.]
+		Łańcuch Markowa $(X_n)$ nazywamy \emph{jednorodnym} 
+		z~macierzą przejścia $P = (p(a,b))$, jeśli
+		$\forall_{n,a,b} \P(X_n = b| X_{n-1} = a) = p(a,b)$
+		o~ile $\P(X_{n-1} = a) > 0$.
+	\end{definition}
+	
+	\begin{example}
+		$X_0, X_1, \ldots$ niezależne, $(X_n)$ jednorodny ł.M.
+		wtw, gdy $X_n$ mają jednakowy rozkład.
+	\end{example}
+	
+	\begin{example}
+		$X_i$ niezalezne, $(S_n = X_0 + \ldots + X_n)$ jednorodny 
+		wtw, gdy $X_n$ mają jednakowy rozkład.
+	\end{example}
+	
+	\begin{example}
+		Błądzenie losowe po trójkące, błądzenie losowe na 
+		$\{-a, \ldots, b\}$ z~odbiciem lub pochłanianiem
+		są jednorodne.
+	\end{example}
+	
+	\begin{definition}[rozkład początkowy]
+		\emph{Rozkładem początkowym} ł.M. $(X_n)_{n \geq 0}$ nazywamy
+		rozkład $X_0$, czyli ciąg $(\pi_a)_{a \in E}$
+		taki, że $\P(X_0 = a) = \pi_a$.
+	\end{definition}
+	
+	\begin{fact}
+		$P = (p(a,b))$ macierz stochastyczna, $\Pi = (\pi_a)$ 
+		rozkład na $E$.
+		$(X_n)$ jest (jednorodnym) ł.M. o~macierzy przejścia $P$ 
+		i~rozkładzie poczatkowym $\Pi$ wtw, gdy
+		$\P(X_0 = a_0, \ldots, X_n = a_n)
+			= \pi_{a_0} p(a_0, a_1) \cdot \ldots \cdot p(a_{n-1}, a_n)$.
+	\end{fact}
+	
+	\begin{theorem}[o~istnieniu ł.M.]
+		$\Pi = (\pi_a)_{a \in E}$ dowolny rozkład na $E$,
+		$P = (p(a,b))_{a,b \in E}$ macierz stochastyczna na $E$,
+		wówczas istnieje (jednorodny) ł.M. 
+		o~rozkładzie początkowym $\Pi$
+		i~macierzy przejścia $P$.
+	\end{theorem}
+
+
+
+
+
+
+
+\end{document}
+ 
+ 

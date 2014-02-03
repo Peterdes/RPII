@@ -1,0 +1,166 @@
+\input{includepl.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 8 stycznia 2014 \hfill}
+
+\begin{document}
+	\begin{definition}
+		$\P_x(A) = \P(A | X_0 = x)$ o~ile $\P(X_0 = x) > 0$.
+	\end{definition}
+	
+	\begin{fact}
+		$(X_n)$ jednorodny ł.M. na $(\Omega, \F, \P)$ 
+		z~macierzą przejścia $P$ taką, że $\P(X_0 = x)>0$.
+		Wtedy względem $\P_x$, $(X_n)_{n \geq 0}$ jest jednorodnym
+		ł. M. z~macierzą przejścia $P$, o~rozkładzie poczatkowym 
+		$\delta_x$, tzn. $\P_x(X_0 = x) = \delta_x(x) = 1$.
+	\end{fact}
+	
+	\begin{definition}
+		$\Pi$ układ probabilistyczny na $E$, wtedy 
+		$P_\Pi(A) = \sum_x \pi_x \P_x$.
+	\end{definition}
+	
+	\begin{fact}
+		$(X_n)$ j.ł.M. w~$(\Omega, \F, \P)$ taki, że 
+		$\forall_x \P(X_n = x) > 0$.
+		Wtedy dla każdego rozkładu $\Pi$ na $E$ ciąg $(X_n)$ jest 
+		j.ł.M. względem $\P_\Pi$ z~macierzą przejścia $P$
+		i~rozkładem początkowym $P$.
+	\end{fact}
+	
+	\begin{fact}
+		$(X_n)_{n \geq 0}$ j.ł.M. z~macierzą przejścia $P$, wtedy
+		\begin{itemize}
+			\item $\P_x(X_1 = x_1, \ldots, X_n = x_n)
+			= p_{x x_1} p_{x_1 x_2} \cdot \ldots\cdot p_{x_{n-1}x_n}$,
+			\item $\P_x (X_1 = x_1, \ldots, X_{n+m} = x_{n+m})$
+			\\${= \P_x (X_1 = x_1, \ldots, X_n = x_n)
+			\cdot \P_{x_n}(X_1 = x_{n+1}, \ldots, X_m = x_{n+m})}$,
+			\item $\forall_{I \subset E^{n-1}, J \subset E^m} \:
+			\P_x( (X_1, \ldots, X_{n-1}) \in I, 
+				X_n = x_n, 
+				(X_{n+1}, \ldots, X_{n+m}) \in J )$\\
+			${= \P_x( (X_1, \ldots, X_{n-1}) \in I, X_n = x_n)
+				\cdot \P_{x_n}( (X_1, \ldots, X_m) \in J)}$.
+		\end{itemize}
+
+	\end{fact}
+	
+	\begin{definition}[macierz przejścia w~$n$ krokach]
+		$P(n) = (p_{x,y}(n))$, 
+		gdzie $p_{x,y}(n) = \P(X_n = y | X_0 = x) = \P_x(X_n = y)$.
+	\end{definition}
+	
+	\begin{remark}
+		$p_{x,y}(n+m) = \sum_z p_{x,z}(n) p_{z,y}(m)$.
+	\end{remark}
+	
+	\begin{remark}
+		$P(0) = P^0 = \mr{Id}$
+	\end{remark}
+	
+	\begin{remark}
+		$f_{x,y}(n) = \P_x(X_1 \neq y, \ldots, X_{n-1} \neq y, X_n = y)$,
+		wtedy $p_{x,y}(n) = \sum_{m=1}^n f_{x,y}(m) p_{y,y}(n-m)$.
+	\end{remark}
+	
+	\pagebreak
+	
+	{\bf Klasyfikacja stanów}
+	\begin{definition}
+		\begin{enumerate}[A.]
+			\item \emph{Ze stanu $x$ da się dojść do stanu $y$},
+			ozn. $x \to y$, jeśli $\exists_{n \geq 0} p_{x,y}(n) > 0$.
+			\item Stany $x, y$ się \emph{komunikują},
+			jesli $x \to y$ oraz $y \to x$.
+			\item Ł.M. jest \emph{nieprzywiedlny}, 
+			jeśli każde dwa stany się komunikują.
+			\item Stan $x$ jest \emph{nieistotny}, jeśli
+			$\exists_y\, x \to y \wedge y \nrightarrow x$.
+			\item Stan $x$ jest \emph{pochłaniający}, jeśli
+			$p_{x,x} = 1$.
+			\item Zbiór stanów $C \subset E$ jest \emph{zamknięty},
+			jeśli $\forall_{x \in C}\, x \to y \implies y \in C$.
+		\end{enumerate}
+
+	\end{definition}
+	
+	{\bf Stany chwilowe i~powracające}
+	\begin{definition}
+		$\displaystyle F_{x,y} = \sum_{n=1}^\infty f_{x,y}(n) 
+		= \sum \P_x\left( \exists_{n \geq 1} X_n=y \right)$.
+	\end{definition}
+	
+	\begin{definition}
+		Mówimy, że stan $x$ jest:
+		\begin{enumerate}[a)]
+			\item \emph{chwilowy}, jeśli $F_{xx} < 1$,
+			\item \emph{powracający}, jeśli $F_{xx} = 1$.
+		\end{enumerate}
+
+	\end{definition}
+	
+	\begin{remark}
+		$x \to y, y \to z \implies x \to z$.
+	\end{remark}
+	
+	\begin{remark}
+		$\leftrightarrow$ to relacja równoważności.
+	\end{remark}
+	
+	\begin{remark}
+		$C$ zamknięty, to można rozpatrywać ł.M. o~zbiorze stanów $C$.
+	\end{remark}
+	
+	\begin{remark}
+		Ł.M. jest nieprzywiedlny wtw, gdy jedyne zamknięte zbiory 
+		to $\varnothing, E$.
+	\end{remark}
+	
+	\begin{definition}[liczba wizyt w~stanie $x$]
+		$N_x = \sum_{n=1}^\infty \1_{\{ X_n = X \}}$
+	\end{definition}
+	
+	\begin{fact}
+		Dla $k \geq 1$, $\P_x(N_y \geq k) = F_{xy} F_{yy}^{k-1}$.
+	\end{fact}
+	
+	\begin{corollary}
+		Jeśli $x$ chwilowy, to $\P_x(N_x = \infty) = 0$, 
+		czyli $\P_x(N_x < \infty) = 1$.
+	\end{corollary}
+	
+	\begin{corollary}
+		Jeśli $x$ powracający, to $\P_x(N_x = \infty) = 1$.
+	\end{corollary}
+	
+	\begin{theorem}[kryterium powracalności]
+		Stan $x$ jest \emph{powracający} 
+		wtw, gdy $\sum_n p_{xx}(n) = \infty$.
+		
+		Stan $x$ jest \emph{chwilowy}
+		wtw, gdy $\sum_n p_{xx}(n) < \infty$.
+	\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 

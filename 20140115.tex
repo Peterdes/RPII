@@ -1,0 +1,93 @@
+\input{includepl.tex}
+
+\markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 15 stycznia 2014 \hfill}
+
+\begin{document}
+	\begin{corollary}
+		Jeśli $x \leftrightarrow y$, to $x$ powracający 
+		wtw, gdy $y$ powracający.
+	\end{corollary}
+	
+	\begin{definition}[chwilowy/powracający nieprzywiedlny ł.M.]
+		Jeśli ł.M. jest nieprzywiedlny, to 
+		albo wszystkie stany są chwilowe (ł.M. jest \emph{chwilowy}),
+		albo wszystkie stany są powracające (ł.M. jest \emph{powracający}).
+	\end{definition}
+	
+	\begin{fact}
+		$(X_n)$ powracający nieprzywiedlny ł.M., 
+		wówczas $\forall_{x,y} F_{xy} = 1$.
+	\end{fact}
+	
+	\begin{corollary}
+		Nieprzywiedlny powracający ł.M. 
+		o~dowolnym rozkładzie początkowym 
+		odwiedza każdy stan z~prawdopodobieństwem $1$,
+		tzn. 
+		$\P_\Pi\left( \forall_{y \in E} \exists_n X_n = y\right) = 1$.
+	\end{corollary}
+	
+	\begin{example}
+		W~notatkach są przykłady.
+	\end{example}
+	
+	{\bf Okresowość ł.M.}
+	
+	\begin{definition}[okres]
+		$x \in E$, \emph{okresem} stanu $x \in E$ nazywamy liczbę $o(x) = \mr{NWD} \{ n \geq 1: p_{x,x} (n) = 0 \}$
+	\end{definition}
+	
+	\begin{fact}
+		$x \leftrightarrow y \implies o(x) = o(y)$
+	\end{fact}
+	
+	\begin{corollary}
+		Jeśli ł.M. jest nieprzywiedlny, to wszystkie stany mają ten 
+		sam okres.
+	\end{corollary}
+	
+	\begin{definition}[okres]
+		$(X_n)$ nieprzywiedly ł.M. \emph{Okresem} takiego łańcucha
+		nazywamy okres dowolnego jego stanu.
+		
+		Mówimy, że łańcuch jest \emph{okresowy}, jeśli ma
+		okres większy niż $1$, a~\emph{nieokresowy}, jeśli ma
+		okres równy $1$.
+	\end{definition}
+	
+	\begin{fact}
+		Jeśli nieprzywiedlny ł.M. jest nieokresowy, to
+		$\forall_{x,y} \exists_{n_0} \forall_{n \geq n_0} 
+			p_{x,y}(n) > 0$.
+	\end{fact}
+	
+	\begin{corollary}
+		Dla nieprzywiedlnego nieokresowego ł.M. o~skończonej 
+		przestrzeni stanów $E$ istnieje $n_0$ takie, że
+		$\forall_{n \geq n_0} \forall_{x,y} p_{x,y}(n) > 0$.
+	\end{corollary}
+	
+	{\bf Rozkłady stacjonarne}
+	\begin{definition}
+		Rozkład probabilistyczny $\Pi = (\pi_x)_{x \in E}$
+		nazywamy stacjonarnym dla ł.M. o~macierzy przejścia
+		$P = (p_{x,y})_{x,y \in E}$, jeśli 
+		$\forall_x \P_\Pi(X_1 = x) = \pi_x$.
+	\end{definition}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+ 
+ 
