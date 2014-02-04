@@ -59,7 +59,7 @@
 				\lim_{n \to \infty} p_{x,y}(n) = \pi_y$,
 			\item ł.M. jest powracający, $\forall_x \pi_x >0$,
 			$\pi_x = \frac1{\mu_x}, 
-			\mu_x = \E_x \inf \{ n \geq 1: X_0 = x \}$,
+			\mu_x = \E_x \inf \{ n \geq 1: X_n = x \}$,
 			\item $\forall_{A \subset E} \lim_{n \to \infty}
 				\nu_n(A) = \Pi(A) = \sum_{x \in A} \pi_x$ p.n.
 		\end{enumerate}
@@ -83,7 +83,7 @@
 			p_F (x) = 1 & \forall_{x \in F}\\
 			p_F(x) = 0 & x \nrightarrow F 
 			(\iff \forall_{y\in F,n} p_{xy}(n) = 0) \\
-			p_F(x) = \sum_{y \in F} p_{xy} p_P(y)
+			p_F(x) = \sum_{y \in F} p_{xy} p_F(y)
 				& \forall_{x \notin F}
 		\end{cases}
 		$$

@@ -1,4 +1,5 @@
 \input{includepl.tex}
+\usepackage{hyperref}
 
 \markright{Piotr Suwara\hfill Rachunek prawdopodobieństwa II: 11 grudnia 2013 \hfill}
 
@@ -33,9 +34,8 @@
 			\item $p>1, \quad \displaystyle
 			\E \max_{1 \leq k \leq n} |M_k|^p 
 			\leq 
-			\left(\frac{p}{p+1}\right)^n \E |M_n|^p$.
+			\left(\frac{p}{p-1}\right)^n \E |M_n|^p$.
 		\end{itemize}
-
 	\end{theorem}
 	
 	\begin{corollary}
@@ -46,12 +46,15 @@
 			\leq
 			\frac{1}{t} \sup_{k \geq 1} \E |M_k|$,
 		\end{itemize}
-
 	\end{corollary}
 	
-	\begin{corollary}
-		$(M_k)$ podmartyngał lub nadmartyngał (o~co chodzi?).
-	\end{corollary}
+	\begin{remark}
+		Dla $(M_k)$ podmartyngału lub nadmartyngału 
+		też są odpowiednie nierówności maksymalne
+		(np. w~notatkach \url{http://mst.mimuw.edu.pl/lecture.php?lecture=rp2&part=Ch5}).
+	\end{remark}
+	
+	\pagebreak
 	
 	{\bf Jednostajna całkowalność zmiennych losowych}
 	\begin{definition}
@@ -89,7 +92,6 @@
 		$X_n \xrightarrow \P X$, to $X_n \to X$ w~$L^p$,
 		czyli $\E |X_n - X|^p \to 0$.
 	\end{theorem}
-	
 	\begin{theorem}
 		$(M_n, \F_n)$ martyngał, NWSR:
 		\begin{enumerate}
@@ -104,7 +106,7 @@
 			$-mierzalna, 
 			$M_n = \E (M_\infty | \F_n)$ p.n..
 		\end{enumerate}
-
+		Ponadto wtedy $M_n \to M_\infty$ p.n. i~w~$L^1$.
 	\end{theorem}
 	
 	\begin{corollary}[tw. Levy'ego]

@@ -10,9 +10,9 @@
 			\item $M_n$ zbieżny w~$L^1$
 			(czyli $\exists_M \E |M_n - M| \to 0$),
 			\item $M_n$ jest prawostronnie domknięty
-			(czyli $\exists_M$, $M$ całkowalne, 
+			(czyli $\exists_M$ $M$ całkowalne, 
 			$M_n = \E(M | \F_n)$),
-			\item[c')] $\exists {M_\infty}$ 
+			\item[c')] $\exists_{M_\infty}$ 
 			$\F_\infty=\sigma\left( \bigcup_{n=1}^\infty \F_n \right)
 			$-mierzalna, 
 			$M_n = \E (M_\infty | \F_n)$ p.n..
@@ -27,14 +27,14 @@
 		NWSR:
 		\begin{enumerate}[a)]
 			\item $\sup_n \E |M_n|^p < \infty$,
-			\item ${|M_n|^p}_n$ jednostajnie całkowalne,
+			\item $\{|M_n|^p\}_n$ jednostajnie całkowalna,
 			\item $M_n$ zbieżny w~$L^p$ 
-			(czyli $\exists M, \E |M|^p < \infty, \E |M_n - M|^p \to 0$),
+			(czyli $\exists_M \E |M|^p < \infty, \E |M_n - M|^p \to 0$),
 			\item $M_n$ jest prawostronnie domknięty
 			przez zmienną z~$L^p$
-			(czyli $\exists M, \E |M|^p < \infty, 
+			\\ (czyli $\exists_M \E |M|^p < \infty, 
 			\forall_n \E(M | \F_n) = M_n$),
-			\item[d')] $\exists M \F_\infty$-mierzalna, 
+			\item[d')] $\exists_M \F_\infty$-mierzalna, 
 			$\E |M_\infty| < \infty,
 			\forall_n \E (M_\infty | \F_n) = M_n$.
 
@@ -48,7 +48,9 @@
 		Istnieje martyngał jednostajnie całkowalny $(M_n)_{n \geq 0}$ 
 		taki, że $\sup_n \E |M_n| = \infty$.
 	\end{remark}
+	
 	\pagebreak
+	
 	{\bf Łańcuchy Markowa}
 	
 	$E$ -- skończona lub przeliczalna przestrzeń stanów.
@@ -78,7 +80,7 @@
 	\begin{definition}[macierz przejścia]
 		$X_n$ jest ł.M., \emph{macierzą przejścia} w~$n$-tym kroku
 		$(P_n(a,b))_{a,b \in E}$ nazywamy macierz elementów
-		$P_n(a,b) = \P(X_n = b, X_{n-1} = a)$ 
+		$P_n(a,b) = \P(X_n = b | X_{n-1} = a)$ 
 		o~ile $\P(X_{n-1} = a) > 0$.
 	\end{definition}
 	
@@ -132,7 +134,7 @@
 		rozkład na $E$.
 		$(X_n)$ jest (jednorodnym) ł.M. o~macierzy przejścia $P$ 
 		i~rozkładzie poczatkowym $\Pi$ wtw, gdy
-		$\P(X_0 = a_0, \ldots, X_n = a_n)
+		\\ $\P(X_0 = a_0, \ldots, X_n = a_n)
 			= \pi_{a_0} p(a_0, a_1) \cdot \ldots \cdot p(a_{n-1}, a_n)$.
 	\end{fact}
 	

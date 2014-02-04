@@ -25,7 +25,7 @@
 		$\forall_x \P(X_n = x) > 0$.
 		Wtedy dla każdego rozkładu $\Pi$ na $E$ ciąg $(X_n)$ jest 
 		j.ł.M. względem $\P_\Pi$ z~macierzą przejścia $P$
-		i~rozkładem początkowym $P$.
+		i~rozkładem początkowym $\Pi$.
 	\end{fact}
 	
 	\begin{fact}
@@ -48,7 +48,7 @@
 	
 	\begin{definition}[macierz przejścia w~$n$ krokach]
 		$P(n) = (p_{x,y}(n))$, 
-		gdzie $p_{x,y}(n) = \P(X_n = y | X_0 = x) = \P_x(X_n = y)$.
+		\\ gdzie $p_{x,y}(n) = \P(X_n = y | X_0 = x) = \P_x(X_n = y)$.
 	\end{definition}
 	
 	\begin{remark}
@@ -60,7 +60,7 @@
 	\end{remark}
 	
 	\begin{remark}
-		$f_{x,y}(n) = \P_x(X_1 \neq y, \ldots, X_{n-1} \neq y, X_n = y)$,
+		$f_{x,y}(n) = \P_x(X_1 \neq y, \ldots, X_{n-1} \neq y, X_n = y)$, \\
 		wtedy $p_{x,y}(n) = \sum_{m=1}^n f_{x,y}(m) p_{y,y}(n-m)$.
 	\end{remark}
 	
@@ -136,11 +136,16 @@
 	
 	\begin{theorem}[kryterium powracalności]
 		Stan $x$ jest \emph{powracający} 
-		wtw, gdy $\sum_n p_{xx}(n) = \infty$.
+		wtw, gdy ${\sum_n p_{xx}(n) = \infty}$.
 		
 		Stan $x$ jest \emph{chwilowy}
 		wtw, gdy $\sum_n p_{xx}(n) < \infty$.
 	\end{theorem}
+	
+	\begin{fact}
+		$\displaystyle \sum_n p_{xx}(n) = \frac1{1-F_{xx}}$
+	\end{fact}
+
 
 
 
